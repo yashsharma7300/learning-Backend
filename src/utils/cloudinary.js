@@ -9,7 +9,7 @@ cloudinary.config({
 
 const uploadTOCloudinary = async (localFilePath) => {
   try {
-    if (!localFilePath) throw new Error("File path is required");
+    if (!localFilePath) return null;
     //upload file on cloudinary
 
     const response = await cloudinary.uploader.upload(localFilePath, {
@@ -21,7 +21,7 @@ const uploadTOCloudinary = async (localFilePath) => {
       `File has been uploaded on cloudinary , and resonse : ${response.secure_url} `
     ); // more important url
 
-      // fs.unlinkSync(localFilePath);
+      fs.unlinkSync(localFilePath);
 
 
     return response;
