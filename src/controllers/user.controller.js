@@ -20,9 +20,9 @@ const registerUser = asyncHandler(async (req, res) => {
 
   console.log("registerUser called");
 
-  console.log(req.body);
+  console.log("req body : ", req.body);
 
-  console.log(req.files);
+  console.log("req files ", req.files);
 
   const { fullname, username, email, password } = req.body; //if data come from a form ,  not for url data then use body parser to parse the data and get the data from req.body
 

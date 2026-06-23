@@ -8,7 +8,7 @@ const app = express();
 console.log("App started");
 
 app.use((req, res, next) => {
-    console.log(req.method, req.url);
+    console.log("req and response are : ", req.method, req.url);
     next();
 });
 
